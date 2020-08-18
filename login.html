@@ -23,13 +23,28 @@
             </div>
         </div>
         <div class="login-wrap">
-            <div class="login-box">
+            <div class="login-box layui-form">
                 <div class="title">登录/注册</div>
                 <div class="form-item">
-                    <div class="label"></div>
-                    <div class="input">
-                        <!-- <input type="text"> -->
+                    <div class="label">手机号</div>
+                    <div class="input flex justify-between">
+                        <input type="text" v-model="mobile">
+                        <button type="button" class="layui-btn  layui-btn-primary layui-btn-sm"
+                            :class="off?'layui-btn-disabled':''" @click="getCode"
+                            :disabled="off">{{codeStatus}}</button>
                     </div>
+                </div>
+                <div class="form-item">
+                    <div class="label">验证码</div>
+                    <div class="input">
+                        <input type="text" v-model="code">
+                    </div>
+                </div>
+                <button type="button" class="layui-btn layui-btn-fluid  layui-btn-lg submit" @click="submit">登录</button>
+                <div class=" felx align-center mt-xl">
+                    <input type="checkbox" name="" title="注册是为同意" lay-skin="primary" :checked="rule" v-model="rule"
+                        lay-filter="code">
+                    <span class="text-primary rule">《用户协议》</span>
                 </div>
             </div>
         </div>
@@ -39,11 +54,70 @@
         vm = new Vue({
             el: '#app',
             data: {
-                title: 'vue'
+                mobile: '',
+                code: '',
+                rule: true,
+                form: '',
+                off: false,
+                codeStatus: '获取验证码',
+                timer: '',
             },
             mounted() {
-
+                layui.use('form', () => {
+                    this.form = layui.form; //只有执行了这一步，部分表单元素才会自动修饰成功
+                    this.form.render();
+                });
+                console.log(this.form, 111111);
             },
+            methods: {
+                getCode() {
+                    if (!this.mobile) {
+                        layer.msg('请输入手机号', {
+                            icon: 5
+                        });
+                        return
+                    }
+                    this.off = true
+                    this.codeStatus = 60
+                    this.timer = setInterval(() => {
+                        this.codeStatus--
+                        if (this.codeStatus < 0) {
+                            clearInterval(this.timer)
+                            this.off = false
+                            this.codeStatus = '获取验证码'
+                        }
+                    }, 1000)
+                    axios.post('/send', {
+                        mobile: this.mobile
+                    }).then(res => {
+
+                    }).catch(err => {
+                        console.log(err);
+                    })
+                },
+                submit() {
+                    if (!this.mobile) {
+                        layer.msg('请输入手机号', {
+                            icon: 5
+                        });
+                        return
+                    }
+                    if (!this.code) {
+                        layer.msg('请输入验证码', {
+                            icon: 5
+                        });
+                        return
+                    }
+                    axios.post('/lgoin', {
+                        mobile: this.mobile,
+                        code: this.code
+                    }).then(res => {
+
+                    }).catch(err => {
+                        console.log(err);
+                    })
+                }
+            }
         })
     </script>
     <style>
@@ -83,7 +157,7 @@
             left: 50%;
             transform: translate(-50%, -50%);
             width: 1000px;
-            height: 500px;
+            height: 450px;
             background: url('./img/bg.jpg');
             box-shadow: 0px 10px 40px 0px rgba(0, 0, 0, 0.5);
         }
@@ -91,21 +165,50 @@
         .login-box {
             position: absolute;
             width: 470px;
-            height: 580px;
+            height: 530px;
             right: 0;
             top: -40px;
             background: #fff;
+            padding: 40px 50px;
         }
 
         .login-box .title {
             text-align: center;
             font-weight: bold;
             color: #333;
-            padding: 36px;
         }
 
         .form-item {
-            margin-bottom:
+            margin-top: 40px;
+        }
+
+        .form-item .label {
+            font-size: 0.8em;
+            color: #A9A9B0
+        }
+
+        .form-item .input {
+            border-bottom: 1px solid rgba(169, 169, 176, 0.3);
+            padding: 15px 0;
+        }
+
+        .form-item .input:focus,
+        .form-item .input:active {
+            border-bottom-color: #09ADBA;
+        }
+
+        .form-item .input input {
+            border: none;
+            outline: none;
+        }
+
+        .login-box .submit {
+            margin-top: 50px;
+        }
+
+        .login-box .rule {
+            position: absolute;
+            margin-left: -10px;
         }
     </style>
 </body>
