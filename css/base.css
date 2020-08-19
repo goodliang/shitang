@@ -12,7 +12,10 @@ body,
   height: 100%;
   overflow: hidden;
 }
-
+.wrap {
+  width: 1200px;
+  margin: 0 auto;
+}
 body {
   font-family: 'PingFang SC', 'Helvetica Neue', Helvetica, 'microsoft yahei',
     arial, STHeiTi, sans-serif;
@@ -524,4 +527,40 @@ a {
   background: #fff;
   border-radius: 2px;
   box-shadow: 0 0 20px rgba(137, 157, 197, 0.1);
+}
+
+.header {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header .logo {
+  width: 66px;
+  height: 66px;
+  background: #fff;
+}
+
+.header .nav {
+  display: flex;
+}
+
+.header .nav .item {
+  color: #fff;
+  padding-left: 50px;
+}
+.footer-hd {
+  background: #222222;
+  color: #fff;
+}
+.footer-bd {
+  background: #1e1e1e;
+}
+.copyright {
+  font-size: 14px;
+  color: #888c8e;
+  text-align: center;
+  line-height: 50px;
 }
