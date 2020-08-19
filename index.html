@@ -16,7 +16,7 @@
     <div id="app">
         <div class="wrap">
             <div class="header">
-                <div class="logo"></div>
+                <img src="./img/logo.png" class="logo" alt="">
                 <div class="nav">
                     <a class="item" href="#">登录/注册</a>
                     <a class="item" href="#">广告影响</a>
@@ -26,20 +26,40 @@
             <div class="banner"></div>
             <div class="main-nav">
                 <div class="item active"><a href="#">首页</a></div>
-                <div class="item"><a href="#">食堂</a></div>
-                <div class="item"><a href="#">酒店</a></div>
-                <div class="item"><a href="#">会堂</a></div>
-                <div class="item"><a href="#">办公</a></div>
+                <div class="item"><a href="foodList.html">食堂</a></div>
+                <div class="item"><a href="#" @click="awaitOpen">酒店</a></div>
+                <div class="item"><a href="#" @click="awaitOpen">会堂</a></div>
+                <div class="item"><a href="#" @click="awaitOpen">办公</a></div>
                 <div class="item"><a href="#">创新解决方案</a></div>
-                <div class="item"><a href="#">采购合规</a></div>
+                <div class="item"><a href="#" @click="awaitOpen">采购合规</a></div>
             </div>
-
+            <div class="goods-panel">
+                <div class="title">食堂</div>
+                <div class="body">
+                    <div class="food-item" v-for="(item,index) in 7" :key="index">
+                        <div class="cover"><img src="./img/bg.jpg" alt=""></div>
+                        <div class="name text-hide two-line">对至少一个菜系精通，至少要达到厨师水准。</div>
+                        <div class="ft flex justify-between align-center">
+                            <div class="price">¥99.33</div>
+                            <button type="button" class="layui-btn layui-btn-sm">购买</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="footer-wrap">
             <div class="footer-hd">
-                <div class="footer wrap flex justify-between">
-                    <div>11</div>
-                    <div>22</div>
+                <div class="footer wrap flex align-center justify-between">
+                    <div class="ft-left">
+                        <img src="./img/logo.png" alt="" class="logo mr-sm">
+                        <span class="text-muted">助你快速打造</span>
+                    </div>
+                    <div class="ft-right">
+                        <a href="#" class="menu wx"></a>
+                        <a href="#" class="menu wb"></a>
+                        <a href="#" class="menu sj"></a>
+                        <a href="#" class="menu yx"></a>
+                    </div>
                 </div>
             </div>
             <div class="footer-bd">
@@ -58,7 +78,11 @@
 
             },
             methods: {
-
+                awaitOpen() {
+                    layer.msg('敬请期待', {
+                        icon: 6
+                    });
+                }
             }
         })
     </script>
@@ -102,6 +126,50 @@
             right: 0;
             bottom: -10px;
             background: #09ADBA;
+        }
+
+        .goods-panel {
+            padding: 0 30px;
+            background: #fff;
+            margin-top: 30px;
+        }
+
+        .goods-panel .title {
+            color: #343434;
+            font-size: 20px;
+            font-weight: bold;
+            padding: 20px 0;
+        }
+
+        .goods-panel .body {
+            display: flex;
+            flex-wrap: wrap;
+            margin-right: -35px;
+        }
+
+
+
+        .food-item {
+            width: 200px;
+            margin-bottom: 30px;
+            margin-right: 35px;
+        }
+
+        .food-item .cover,
+        .food-item .cover img {
+            width: 200px;
+            height: 140px;
+            transition: all .4s;
+        }
+
+        .food-item .cover:hover img {
+            transform: scale(1.05);
+        }
+
+        .food-item .name {
+            color: #222222;
+            margin: 10px 0;
+            height: 40px;
         }
     </style>
 </body>

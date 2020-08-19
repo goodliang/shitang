@@ -4,14 +4,6 @@
   box-sizing: border-box;
 }
 
-html,
-body,
-#app,
-.wrapper {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
 .wrap {
   width: 1200px;
   margin: 0 auto;
@@ -555,6 +547,9 @@ a {
   background: #222222;
   color: #fff;
 }
+.footer-hd .footer {
+  height: 180px;
+}
 .footer-bd {
   background: #1e1e1e;
 }
@@ -563,4 +558,49 @@ a {
   color: #888c8e;
   text-align: center;
   line-height: 50px;
+}
+.footer .logo {
+  width: 60px;
+  height: 60px;
+}
+.footer .ft-right {
+  display: flex;
+}
+.footer .ft-right .menu {
+  width: 30px;
+  height: 30px;
+  margin-left: 20px;
+  display: inline-block;
+}
+.footer .ft-right .menu.wx {
+  background: url('../img/wx_default.png');
+  background-size: contain;
+}
+.footer .ft-right .menu.wx:hover {
+  background: url('../img/wx_active.png');
+  background-size: contain;
+}
+.footer .ft-right .menu.wb {
+  background: url('../img/weibo_default.png');
+  background-size: contain;
+}
+.footer .ft-right .menu.wb:hover {
+  background: url('../img/weibo_active.png');
+  background-size: contain;
+}
+.footer .ft-right .menu.sj {
+  background: url('../img/phone_default.png');
+  background-size: contain;
+}
+.footer .ft-right .menu.sj:hover {
+  background: url('../img/phone_active.png');
+  background-size: contain;
+}
+.footer .ft-right .menu.yx {
+  background: url('../img/email_default.png');
+  background-size: contain;
+}
+.footer .ft-right .menu.yx:hover {
+  background: url('../img/email_active.png');
+  background-size: contain;
 }
