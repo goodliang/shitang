@@ -35,15 +35,74 @@
             </div>
             <div class="goods-panel">
                 <div class="title">食堂</div>
-                <div class="body">
-                    <div class="food-item" v-for="(item,index) in 7" :key="index">
+                <div class="body five">
+                    <a href="#" class="good-item" v-for="(item,index) in 5" :key="index">
                         <div class="cover"><img src="./img/bg.jpg" alt=""></div>
                         <div class="name text-hide two-line">对至少一个菜系精通，至少要达到厨师水准。</div>
                         <div class="ft flex justify-between align-center">
-                            <div class="price">¥99.33</div>
+                            <div class="price"><small>¥</small>99.33</div>
                             <button type="button" class="layui-btn layui-btn-sm">购买</button>
                         </div>
-                    </div>
+                    </a>
+                </div>
+            </div>
+            <div class="goods-panel">
+                <div class="title">酒店</div>
+                <div class="body">
+                    <a href="#" class="good-item" v-for="(item,index) in 4" :key="index">
+                        <div class="cover"><img src="./img/bg.jpg" alt=""></div>
+                        <div class="name text-hide bold">锦江之星(北京首都国际机场店)</div>
+                        <div class="star-group">
+                            <div class="item" :class="star > index?'active':''" v-for="(item,index) in 5" :key="index">
+                            </div>
+                            <div class="label">4.5分</div>
+                        </div>
+                        <div class="f12 text-muted mt-xs mb-sm">北京/石景山</div>
+                        <div class="ft">
+                            <div class="price"><small>¥</small>99.33</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="goods-panel">
+                <div class="title">会堂</div>
+                <div class="body">
+                    <a href="#" class="good-item" v-for="(item,index) in 4" :key="index">
+                        <div class="cover"><img src="./img/bg.jpg" alt=""></div>
+                        <div class="name text-hide bold">锦江之星(北京首都国际机场店)</div>
+                        <div class="f12 mt-sm mb-sm">会场面积：342平方米</div>
+                        <div class="f12 text-muted">北京/石景山</div>
+                    </a>
+                </div>
+            </div>
+            <div class="goods-panel">
+                <div class="title">办公</div>
+                <div class="body">
+                    <a href="#" class="good-item" v-for="(item,index) in 4" :key="index">
+                        <div class="cover"><img src="./img/bg.jpg" alt=""></div>
+                        <div class="flex justify-between">
+                            <div class="pr-sm name text-hide two-line">锦江之星(北京首都国际机场店)</div>
+                            <div class="tag mt-sm">北京22套出租</div>
+                        </div>
+                        <div class="f12 mb-sm text-muted">北京/石景山</div>
+                        <div class="ft">
+                            <div class="price">99元/m/天</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="goods-panel">
+                <div class="title">婚宴</div>
+                <div class="body">
+                    <a href="#" class="good-item" v-for="(item,index) in 4" :key="index">
+                        <div class="cover"><img src="./img/bg.jpg" alt=""></div>
+                        <div class="name text-hide bold">锦江之星(北京首都国际机场店)</div>
+                        <div class="f12 mt-sm mb-sm text-muted">最多200桌 | 北京石景山区 | 五星级
+                            宴会厅数：20个 | 菜单一份 | 室外婚礼</div>
+                        <div class="ft">
+                            <div class="price"><small>¥</small>99.33<small class="ml-xs">起</small></div>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
@@ -72,7 +131,7 @@
         vm = new Vue({
             el: '#app',
             data: {
-
+                star: 4,
             },
             mounted() {
 
@@ -97,79 +156,6 @@
 
         .banner {
             height: 384px;
-        }
-
-        .main-nav {
-            height: 100px;
-            background: #fff;
-            display: flex;
-            align-items: center;
-        }
-
-        .main-nav .item {
-            flex: 1;
-            text-align: center;
-
-        }
-
-        .main-nav .active a {
-            position: relative;
-            color: #09ADBA;
-            font-weight: bold;
-        }
-
-        .main-nav .active a::after {
-            content: '';
-            position: absolute;
-            height: 2px;
-            left: 0;
-            right: 0;
-            bottom: -10px;
-            background: #09ADBA;
-        }
-
-        .goods-panel {
-            padding: 0 30px;
-            background: #fff;
-            margin-top: 30px;
-        }
-
-        .goods-panel .title {
-            color: #343434;
-            font-size: 20px;
-            font-weight: bold;
-            padding: 20px 0;
-        }
-
-        .goods-panel .body {
-            display: flex;
-            flex-wrap: wrap;
-            margin-right: -35px;
-        }
-
-
-
-        .food-item {
-            width: 200px;
-            margin-bottom: 30px;
-            margin-right: 35px;
-        }
-
-        .food-item .cover,
-        .food-item .cover img {
-            width: 200px;
-            height: 140px;
-            transition: all .4s;
-        }
-
-        .food-item .cover:hover img {
-            transform: scale(1.05);
-        }
-
-        .food-item .name {
-            color: #222222;
-            margin: 10px 0;
-            height: 40px;
         }
     </style>
 </body>

@@ -11,6 +11,7 @@
 body {
   font-family: 'PingFang SC', 'Helvetica Neue', Helvetica, 'microsoft yahei',
     arial, STHeiTi, sans-serif;
+  background-color: #f5f6fa;
 }
 
 .h1,
@@ -383,6 +384,10 @@ a {
   font-weight: normal !important;
 }
 
+.bold {
+  font-weight: bold;
+}
+
 .fsn {
   font-style: normal !important;
 }
@@ -521,6 +526,10 @@ a {
   box-shadow: 0 0 20px rgba(137, 157, 197, 0.1);
 }
 
+.header-warp {
+  background: #fff;
+}
+
 .header {
   max-width: 1200px;
   margin: 0 auto;
@@ -542,6 +551,14 @@ a {
 .header .nav .item {
   color: #fff;
   padding-left: 50px;
+}
+
+.header .main-nav {
+  height: 66px;
+  flex: 1;
+}
+.header .main-nav .item a {
+  color: #7e7f81 !important;
 }
 .footer-hd {
   background: #222222;
@@ -603,4 +620,132 @@ a {
 .footer .ft-right .menu.yx:hover {
   background: url('../img/email_active.png');
   background-size: contain;
+}
+
+.goods-panel {
+  padding: 0 30px;
+  background: #fff;
+  margin: 20px auto;
+}
+
+.goods-panel .title {
+  color: #343434;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 20px 0;
+}
+
+.goods-panel .body {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -33px;
+}
+
+.goods-panel .body .good-item {
+  width: 260px;
+  margin-bottom: 30px;
+  margin-right: 33px;
+}
+
+.good-item .cover,
+.good-item .cover img {
+  width: 100%;
+  height: 160px;
+  transition: all 0.4s;
+}
+
+.good-item .cover:hover img {
+  transform: scale(1.05);
+}
+
+.good-item .name {
+  color: #222222;
+  margin: 8px 0;
+}
+.good-item .name .two-line {
+  height: 40px;
+}
+.good-item .price {
+  font-weight: bold;
+  color: #09adba;
+}
+.good-item .price small {
+  font-size: 12px;
+  display: inline-block;
+  padding-right: 2px;
+}
+
+.good-item .tag {
+  font-size: 12px;
+  color: #a9a9b0;
+  padding: 0 3px;
+  border-radius: 2px;
+  background: #f3f5f7;
+  white-space: nowrap;
+  height: 20px;
+}
+
+.goods-panel .body.five {
+  margin-right: -35px;
+}
+
+.goods-panel .body.five .good-item {
+  width: 200px;
+  margin-bottom: 30px;
+  margin-right: 35px;
+}
+.goods-panel .body.five .good-item .cover,
+.goods-panel .body.five .good-item .cover img {
+  height: 140px;
+}
+.star-group {
+  display: flex;
+}
+.star-group .label {
+  font-size: 12px;
+  color: #a9a9b0;
+  padding-left: 10px;
+}
+.star-group .item {
+  width: 16px;
+  height: 16px;
+  margin-right: 3px;
+  background: url('../img/star_gray.png');
+  background-size: contain;
+}
+.star-group .item.active {
+  width: 16px;
+  height: 16px;
+  background: url('../img/star.png');
+  background-size: contain;
+}
+
+.main-nav {
+  height: 100px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+}
+
+.main-nav .item {
+  flex: 1;
+  text-align: center;
+}
+
+.main-nav .active a {
+  position: relative;
+  color: #09adba;
+  font-weight: bold;
+}
+.main-nav .item a:hover {
+  color: #09adba !important;
+}
+.main-nav .active a::after {
+  content: '';
+  position: absolute;
+  height: 2px;
+  left: 0;
+  right: 0;
+  bottom: -10px;
+  background: #09adba;
 }
