@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>十堂</title>
+    <link rel="stylesheet" href="./css/base.css">
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.11/vue.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.20.0-0/axios.min.js"></script>
+    <link rel="stylesheet" href="./layui/css/layui.css">
+    <script src="./layui/layui.all.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div class="header-warp">
+            <div class="header wrap">
+                <img src="./img/logo.png" class="logo" alt="">
+                <div class="nav">
+                    <a class="item" href="#">登录/注册</a>
+                    <a class="item" href="#">广告影响</a>
+                    <a class="item" href="#">关于我们</a>
+                </div>
+            </div>
+        </div>
+        <div class="mk-title">升级到VIP版，享受更好的服务</div>
+        <div class="wrap mk-content">
+            <dl class="item">
+                <dt>
+                    <h2>白银版</h2>
+                    <div class="btn text">联系客服</div>
+                </dt>
+                <dd>永久免费</dd>
+                <dd>在搜索结果中展示</dd>
+                <dd><img src="./img/error.png" class="error-icon"></dd>
+                <dd><img src="./img/error.png" class="error-icon"></dd>
+                <dd><img src="./img/error.png" class="error-icon"></dd>
+                <dd>高清视频带看</dd>
+                <dd><img src="./img/error.png" class="error-icon"></dd>
+                <dd><img src="./img/error.png" class="error-icon"></dd>
+                <dd><img src="./img/error.png" class="error-icon"></dd>
+                <dd>搜索结果中呈现客户logo</dd>
+                <dd>结果展示业中呈现客户logo</dd>
+                <dd><img src="./img/error.png" class="error-icon"></dd>
+                <dd><img src="./img/error.png" class="error-icon"></dd>
+                <dd><img src="./img/error.png" class="error-icon"></dd>
+            </dl>
+            <dl class="item">
+                <dt>
+                    <h2>钻石版</h2>
+                    <div class="btn">联系客服</div>
+                </dt>
+                <dd>永久免费</dd>
+                <dd>在搜索结果中展示</dd>
+                <dd><img src="./img/error.png" class="error-icon"></dd>
+                <dd><img src="./img/error.png" class="error-icon"></dd>
+                <dd><img src="./img/error.png" class="error-icon"></dd>
+                <dd>高清视频带看</dd>
+                <dd><img src="./img/error.png" class="error-icon"></dd>
+                <dd><img src="./img/error.png" class="error-icon"></dd>
+                <dd><img src="./img/error.png" class="error-icon"></dd>
+                <dd>搜索结果中呈现客户logo</dd>
+                <dd>结果展示业中呈现客户logo</dd>
+                <dd><img src="./img/error.png" class="error-icon"></dd>
+                <dd><img src="./img/error.png" class="error-icon"></dd>
+                <dd><img src="./img/error.png" class="error-icon"></dd>
+            </dl>
+            <dl class="item">
+                <dt>
+                    <h2>铂金版</h2>
+                    <div class="btn">联系客服</div>
+                </dt>
+                <dd>永久免费</dd>
+                <dd>在搜索结果中展示</dd>
+                <dd><img src="./img/error.png" class="error-icon"></dd>
+                <dd><img src="./img/error.png" class="error-icon"></dd>
+                <dd><img src="./img/error.png" class="error-icon"></dd>
+                <dd>高清视频带看</dd>
+                <dd><img src="./img/error.png" class="error-icon"></dd>
+                <dd><img src="./img/error.png" class="error-icon"></dd>
+                <dd><img src="./img/error.png" class="error-icon"></dd>
+                <dd>搜索结果中呈现客户logo</dd>
+                <dd>结果展示业中呈现客户logo</dd>
+                <dd><img src="./img/error.png" class="error-icon"></dd>
+                <dd><img src="./img/error.png" class="error-icon"></dd>
+                <dd><img src="./img/error.png" class="error-icon"></dd>
+            </dl>
+            <dl class="item">
+                <dt>
+                    <h2>黄金版</h2>
+                    <div class="btn">联系客服</div>
+                </dt>
+                <dd>永久免费</dd>
+                <dd>在搜索结果中展示</dd>
+                <dd><img src="./img/error.png" class="error-icon"></dd>
+                <dd><img src="./img/error.png" class="error-icon"></dd>
+                <dd><img src="./img/error.png" class="error-icon"></dd>
+                <dd>高清视频带看</dd>
+                <dd><img src="./img/error.png" class="error-icon"></dd>
+                <dd><img src="./img/error.png" class="error-icon"></dd>
+                <dd><img src="./img/error.png" class="error-icon"></dd>
+                <dd>搜索结果中呈现客户logo</dd>
+                <dd>结果展示业中呈现客户logo</dd>
+                <dd><img src="./img/error.png" class="error-icon"></dd>
+                <dd><img src="./img/error.png" class="error-icon"></dd>
+                <dd><img src="./img/error.png" class="error-icon"></dd>
+            </dl>
+        </div>
+        <div class="footer-wrap">
+            <div class="footer-hd">
+                <div class="footer wrap flex align-center justify-between">
+                    <div class="ft-left">
+                        <img src="./img/logo.png" alt="" class="logo mr-sm">
+                        <span class="text-muted">助你快速打造</span>
+                    </div>
+                    <div class="ft-right">
+                        <a href="#" class="menu wx"></a>
+                        <a href="#" class="menu wb"></a>
+                        <a href="#" class="menu sj"></a>
+                        <a href="#" class="menu yx"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bd">
+                <div class="copyright wrap">Copyright © www.AxureUX.com, All Rights Reserved.</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        vm = new Vue({
+            el: '#app',
+            data: {
+                star: 4,
+            },
+            mounted() {
+
+            },
+            methods: {
+                awaitOpen() {
+                    layer.msg('敬请期待', {
+                        icon: 6
+                    });
+                }
+            }
+        })
+    </script>
+    <style>
+        .mk-title {
+            text-align: center;
+            padding: 30px;
+            font-size: 20px;
+            color: #222222;
+        }
+
+        .mk-content {
+            display: flex;
+            margin-bottom: 50px;
+        }
+
+        .mk-content .item {
+            flex: 1;
+            text-align: center;
+            border: 1px solid rgba(198, 198, 198, 1);
+            margin-left: -1px;
+        }
+
+        .mk-content .item dt {
+            padding-bottom: 20px;
+        }
+
+        .mk-content .item dt h2 {
+            font-weight: bold;
+            font-size: 20px;
+            padding: 30px 0;
+        }
+
+        .mk-content .item dt .btn {
+            width: 130px;
+            height: 40px;
+            background: #09ADBA;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            margin: 0 auto;
+        }
+
+        .mk-content .item dt .btn.text {
+            background: transparent;
+            color: #222222;
+        }
+
+        .mk-content .item dd {
+            font-size: 14px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mk-content .item dd:nth-of-type(odd) {
+            background: rgba(216, 216, 216, 0.13)
+        }
+
+        .mk-content .item:hover {
+            box-shadow: 0px 2px 30px 0px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(9, 173, 186, 1);
+            z-index: 1;
+            background: rgba(9, 173, 186, 0.05);
+        }
+
+        .mk-content .item .error-icon {
+            width: 16px;
+            height: 16px;
+        }
+    </style>
+</body>
+
+</html>
