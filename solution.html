@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>十堂</title>
+    <link rel="stylesheet" href="./css/base.css">
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.11/vue.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.20.0-0/axios.min.js"></script>
+    <link rel="stylesheet" href="./layui/css/layui.css">
+    <script src="./layui/layui.all.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div class="header-warp">
+            <div class="header wrap">
+                <img src="./img/logo.png" class="logo" alt="">
+                <div class="nav">
+                    <a class="item" href="#">登录/注册</a>
+                    <a class="item" href="#">广告影响</a>
+                    <a class="item" href="#">关于我们</a>
+                </div>
+            </div>
+        </div>
+        <div class="wrap">
+            <div class="banner-box">
+                <img src="./img/bg.jpg" class="banner" alt="">
+                <div class="title">企业级解决方案「 应用案例 」</div>
+            </div>
+            <div class="photo-box">
+                <div class="photo-panel">
+                    <div class="item"> <img src="./img/bg.jpg">
+                        <div class="label">企业团餐及无人零售企业团餐及无人零售</div>
+                    </div>
+                    <div class="item"> <img src="./img/bg.jpg">
+                        <div class="label">企业团餐及无人零售</div>
+                    </div>
+                </div>
+                <div class="photo-info">
+                    <div class="tit">应用案例</div>
+                    <div class="text">中型企业-100人以上员工用餐无人柜解决方案
+                        爱奇艺北京中关村和三里屯两大办公区采用星品无人冷冻柜解决方案，自助扫码、自助加热，24小时速热即食，有效解决员工加班用餐、节约运营成本。</div>
+                </div>
+            </div>
+            <div class="photo-box" v-for="(item,index) in 2" :key="index">
+                <div class="photo-panel three">
+                    <div class="item"> <img src="./img/bg.jpg">
+                        <div class="label">企业团餐及无人</div>
+                    </div>
+                    <div class="item"> <img src="./img/bg.jpg">
+                        <div class="label">企业团餐及无</div>
+                    </div>
+                    <div class="item"> <img src="./img/bg.jpg">
+                        <div class="label">企业团餐及无</div>
+                    </div>
+                </div>
+                <div class="photo-info">
+                    <div class="tit">应用案例</div>
+                    <div class="text">中型企业-100人以上员工用餐无人柜解决方案
+                        爱奇艺北京中关村和三里屯两大办公区采用星品无人冷冻柜解决方案，自助扫码、自助加热，24小时速热即食，有效解决员工加班用餐、节约运营成本。</div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-wrap">
+            <div class="footer-hd">
+                <div class="footer wrap flex align-center justify-between">
+                    <div class="ft-left">
+                        <img src="./img/logo.png" alt="" class="logo mr-sm">
+                        <span class="text-muted">助你快速打造</span>
+                    </div>
+                    <div class="ft-right">
+                        <a href="#" class="menu wx"></a>
+                        <a href="#" class="menu wb"></a>
+                        <a href="#" class="menu sj"></a>
+                        <a href="#" class="menu yx"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bd">
+                <div class="copyright wrap">Copyright © www.AxureUX.com, All Rights Reserved.</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        vm = new Vue({
+            el: '#app',
+            data: {
+                star: 4,
+            },
+            mounted() {
+
+            },
+            methods: {
+                awaitOpen() {
+                    layer.msg('敬请期待', {
+                        icon: 6
+                    });
+                }
+            }
+        })
+    </script>
+    <style>
+        body {
+            background: #fff;
+        }
+
+        .banner-box {
+            position: relative;
+            margin-bottom: 60px;
+        }
+
+        .banner-box .title {
+            position: absolute;
+            left: 30px;
+            bottom: -30px;
+            background: #0CADBA;
+            height: 60px;
+            line-height: 60px;
+            padding: 0 30px;
+            color: #fff;
+            font-size: 22px;
+        }
+
+        .banner {
+            width: 100%;
+            height: 300px;
+        }
+
+        .photo-box {
+            margin: 40px auto;
+        }
+
+        .photo-info {
+            padding: 20px;
+            background: #F9F9F9;
+        }
+
+        .photo-info .tit {
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .photo-info .text {
+            font-size: 14px;
+        }
+
+        .photo-panel {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .photo-panel .item {
+            width: 588px;
+            position: relative;
+        }
+
+        .photo-panel .item .label {
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            background: #0CADBA;
+            writing-mode: tb-rl;
+            font-size: 14px;
+            letter-spacing: 4px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .photo-panel .item .label.left {
+            left: 0;
+        }
+
+        .photo-panel .item img {
+            width: 100%;
+            height: 220px;
+        }
+
+        .photo-panel.three .item {
+            width: 385px;
+        }
+
+        .photo-panel.three .item img {
+            height: 170px;
+        }
+    </style>
+</body>
+
+</html>

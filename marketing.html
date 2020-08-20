@@ -49,7 +49,7 @@
             <dl class="item">
                 <dt>
                     <h2>钻石版</h2>
-                    <div class="btn">联系客服</div>
+                    <div class="btn" @click="kefu">联系客服</div>
                 </dt>
                 <dd>永久免费</dd>
                 <dd>在搜索结果中展示</dd>
@@ -69,7 +69,7 @@
             <dl class="item">
                 <dt>
                     <h2>铂金版</h2>
-                    <div class="btn">联系客服</div>
+                    <div class="btn" @click="kefu">联系客服</div>
                 </dt>
                 <dd>永久免费</dd>
                 <dd>在搜索结果中展示</dd>
@@ -89,7 +89,7 @@
             <dl class="item">
                 <dt>
                     <h2>黄金版</h2>
-                    <div class="btn">联系客服</div>
+                    <div class="btn" @click="kefu">联系客服</div>
                 </dt>
                 <dd>永久免费</dd>
                 <dd>在搜索结果中展示</dd>
@@ -138,9 +138,10 @@
 
             },
             methods: {
-                awaitOpen() {
-                    layer.msg('敬请期待', {
-                        icon: 6
+                kefu() {
+                    layer.open({
+                        title: '联系服客',
+                        content: '400-888-8888'
                     });
                 }
             }
@@ -185,6 +186,7 @@
             justify-content: center;
             color: #fff;
             margin: 0 auto;
+            cursor: pointer;
         }
 
         .mk-content .item dt .btn.text {
