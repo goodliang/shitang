@@ -754,3 +754,15 @@ a {
   bottom: -10px;
   background: #09adba;
 }
+
+.sub-tit {
+  border-bottom: 1px solid #d9f1f3;
+  font-size: 18px;
+  font-weight: bold;
+  background: url('../img/tit_bg.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 20px bottom;
+  margin: 20px 0;
+  padding-bottom: 5px;
+}
